@@ -1,9 +1,11 @@
 Primecoin XPM Pool Server
 ==============
 
-Forked from : https://github.com/madMAx43v3r/xpmpool
+XPMpool
 --------------
-This primecoind daemon akt as original primecoind
+Forked from : https://github.com/madMAx43v3r/xpmpool
+
+This primecoind daemon act as original primecoind
 https://github.com/primecoin/primecoin
 but permit also miner connections from xolominer
 (remember beeeeer.org)
