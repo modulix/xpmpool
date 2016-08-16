@@ -1,9 +1,28 @@
-Building Bitcoin
+Building XPMpool (primecoind) :
 
-See doc/readme-qt.rst for instructions on building Bitcoin-Qt,
-the intended-for-end-users, nice-graphical-interface, reference
-implementation of Bitcoin.
+Get sources from : https://github.com/modulix/xpmpool
 
-See doc/build-*.txt for instructions on building bitcoind,
-the intended-for-services, no-graphical-interface, reference
-implementation of Bitcoin.
+$ git clone https://github.com/modulix/xpmpool
+$ cd xpmpool/src
+## Review makefile.unix and build.sh files about your $LIBS...
+$ ./build.sh
+FYI : by default, executed command is :
+make -f makefile.unix  USE_UPNP= BDB_INCLUDE_PATH=/usr/include/db6.0
+
+You need also to create a PostgreSQL database:
+# sudo su - postgres
+$ createuser xpmpool
+$ createdb --owner=xpmpool xpm
+$ exit
+#
+
+Now, you can try to launch your brand new daemon:
+1) To create tables in database :
+./primecoind -dbuser=xpmpool -dbname=xpm -initwtdb
+2) To launch as daemon :
+./primecoind -dbuser=xpmpool -dbname=xpm -daemon
+
+This daemon have be tested to be compatible with this xolominer:
+
+https://github.com/thbaumbach/primecoin
+

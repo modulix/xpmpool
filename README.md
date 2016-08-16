@@ -3,6 +3,10 @@ Primecoin XPM Pool Server
 
 Forked from : https://github.com/madMAx43v3r/xpmpool
 --------------
+This primecoind daemon akt as original primecoind
+https://github.com/primecoin/primecoin
+but permit also miner connections from xolominer
+(remember beeeeer.org)
 
 The server works with:
 - ZEROMQ message system
@@ -13,10 +17,11 @@ The server works with:
 
 How to compile primecoind:
 - Build all dependencies
-- Set your include paths etc. in makefile.unix
-- In ./src: make -f makefile.unix
+- Set your include paths etc. in makefile.unix and build.sh
+- Execute build.sh or try to compile manually:
+  cd ./src; make -f makefile.unix
 
-Use src/build.sh to compile the protobuf definition if needed.
+Use build.sh to compile the protobuf definition and launch makefile.
 
 Important: When starting the server for the first time use -initwtdb command line option to create all database tables.
 
